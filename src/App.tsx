@@ -1,12 +1,8 @@
-import { useState } from "react";
 import "./App.css";
-import "xtendui";
-import "xtendui/src/toggle";
+import { Button } from "./components";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <div></div>;
+  return <Button className="bg-primary">dasdsa</Button>;
 }
 
 export default App;
