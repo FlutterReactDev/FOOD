@@ -73,8 +73,9 @@ export { default as Swap } from "./Swap";
 export type SwapProps = TSwapProps;
 
 // ----------------------- < Data Display > ----------------------- //
-
-// Data Display > Alert
+//Data Display > Card List
+export { default as CardList } from "./CardList";
+//Data Display > Alert
 export { default as Alert } from "./Alert";
 export type AlertProps = TAlertProps;
 
@@ -175,7 +176,9 @@ export type FileInputProps = TFileInputProps;
 // ----------------------- < Layout > ----------------------- //
 
 // Layout > Frame
-
+export { default as Frame } from "./Frame";
+// Layout > Sidebar
+export { default as Sidebar } from "./Sidebar";
 // Layout > Artboard
 export { default as Artboard } from "./Artboard";
 export type ArtboardProps = TArtboardProps;

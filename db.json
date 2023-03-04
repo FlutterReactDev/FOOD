@@ -1,0 +1,346 @@
+{
+  "hot-dishes": [
+    {
+      "id": 1,
+      "img": "/src/assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 2,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 3,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 4,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 5,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 6,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 7,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 8,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 19,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 20,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 30,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 40,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    }
+  ],
+  "cold-dishes": [
+    {
+      "id": 1,
+      "img": "/src/assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 2,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 3,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 4,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 5,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 6,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 7,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 8,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 19,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 20,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 30,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 40,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    }
+  ],
+  "soup":[
+    {
+      "id": 1,
+      "img": "/src/assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 2,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 3,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 4,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 5,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 6,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 7,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 8,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 19,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 20,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 30,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 40,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    }
+  ],
+  "grill":[
+    {
+      "id": 1,
+      "img": "/src/assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 2,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 3,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 4,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 5,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 6,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 7,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 8,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    },
+    {
+      "id": 19,
+      "img": "/src//assets/DishImg1.png",
+      "desciption": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20
+    },
+    {
+      "id": 20,
+      "img": "/src//assets/DishImg-2.png",
+      "desciption": "Salted Pasta with mushroom sauce",
+      "price": 2.69,
+      "available": 11
+    },
+    {
+      "id": 30,
+      "img": "/src//assets/DishImg-3.png",
+      "desciption": "Beef dumpling in hot and sour soup",
+      "price": 2.99,
+      "available": 16
+    },
+    {
+      "id": 40,
+      "img": "/src//assets/DishImg-4.png",
+      "desciption": "Healthy noodle with spinach leaf",
+      "price": 3.29,
+      "available": 17
+    }
+  ]
+}

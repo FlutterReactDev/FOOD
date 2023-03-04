@@ -1,0 +1,9 @@
+.frame {
+  display: grid;
+  height: 100vh;
+}
+
+.frame {
+  grid-template-columns: max-content 1fr ;
+  @apply gap-4;
+}

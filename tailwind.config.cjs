@@ -1,5 +1,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+ 
+
   theme: {
     extend: {},
   },
@@ -13,6 +15,7 @@ module.exports = {
           "base-100": "#252836",
           "base-200": "#1F1D2B",
           neutral: "#EA7C69",
+          secondary:"#9288E0"
         },
       },
     ],
