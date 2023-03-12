@@ -6,7 +6,5 @@ body {
   @apply text-sm;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
+
 

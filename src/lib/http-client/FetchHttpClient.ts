@@ -25,7 +25,6 @@ class FetchHttpClient implements HttpClientInterface {
         _url.searchParams.append(key, value);
       });
     }
-    console.log(_url);
 
     const data = fetch(_url, {
       body: init?.body ? JSON.stringify(init?.body) : undefined,

@@ -88,15 +88,6 @@ export const ROUTES: IRoutes[] = [
     path: "/dashboard",
     element: <Dashboard />,
     icon: <ChartPieIcon className="w-6 h-6" />,
-
-    loader() {
-      const customerService = container.resolve(CustomerService);
-      const response = customerService.get();
-
-      return defer({
-        customers: response.data,
-      });
-    },
   },
   {
     path: "/settings",

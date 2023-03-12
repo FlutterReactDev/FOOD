@@ -9,6 +9,7 @@ import {
   Table,
 } from "@components";
 import Stat from "@components/Stats/Stat";
+import { CustomerList } from "@features";
 import {
   AdjustmentsHorizontalIcon,
   ArrowDownIcon,
@@ -21,7 +22,6 @@ import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
 
 const Dashboard = () => {
-  const { customers } = useLoaderData();
   return (
     <div className="flex py-6 h-screen">
       <div className="w-2/3 flex flex-col">
@@ -117,46 +117,7 @@ const Dashboard = () => {
               Filter Order
             </Button>
           </div>
-          <div className="overflow-x-auto">
-            <Table className="w-full">
-              <Table.Head>
-                <span>Customer</span>
-                <span>Menu</span>
-                <span>Total Payment</span>
-                <span>Status</span>
-              </Table.Head>
-
-              <Table.Body>
-                <Suspense fallback={<h1>Loading...</h1>}>
-                  <Await
-                    resolve={customers}
-                    children={(data) => {
-                      return data.map((customer) => {
-                        return (
-                          <Table.Row>
-                            <div className="flex items-center space-x-3 truncate">
-                              <Mask
-                                className="mask-circle w-12 h-12"
-                                src={customer.avatar}
-                              />
-                              <div>
-                                <div className="font-bold">{customer.name}</div>
-                              </div>
-                            </div>
-                            <div>{customer.menu}</div>
-                            <div>${customer.totalPayment}</div>
-                            <div>
-                              <Badge color="success">{customer.status}</Badge>
-                            </div>
-                          </Table.Row>
-                        );
-                      });
-                    }}
-                  />
-                </Suspense>
-              </Table.Body>
-            </Table>
-          </div>
+          <CustomerList />
         </div>
       </div>
       <div className="w-1/3"></div>

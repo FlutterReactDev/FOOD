@@ -45,7 +45,7 @@ function App() {
   return (
     <>
       <Suspense fallback={<h1>Loading ...</h1>}>
-        <SkeletonTheme baseColor="#252836" highlightColor="#444">
+        <SkeletonTheme baseColor="#494465" highlightColor="#444">
           <Frame>
             <Sidebar logoUrl={logo} navigationMarkup={navigationMarkup} />
             <Outlet />
