@@ -8,6 +8,9 @@ import {
 import { CardList } from "@components";
 import { lazy, ReactNode } from "react";
 import { httpClient } from "../wrappers/httpClient";
+import { container } from "tsyringe";
+import { FoodService } from "@service";
+import CustomerService from "@service/customer";
 
 const Home = lazy(() =>
   import("@pages/Home").then((module) => ({
@@ -66,12 +69,16 @@ export const ROUTES: IRoutes[] = [
     icon: <HomeIcon className="w-6 h-6" />,
     children: [
       {
-        path: ":id",
+        path: ":type",
         element: <CardList />,
-        loader: ({ params: { id } }) => {
-          const response = httpClient.get(id || "").then((result) => result);
+        loader({ params }) {
+          const foodService = container.resolve(FoodService);
+          const response = foodService.getFoods(
+            params as Record<string, string>
+          );
+
           return defer({
-            data: response,
+            foods: response.data,
           });
         },
       },
@@ -81,6 +88,15 @@ export const ROUTES: IRoutes[] = [
     path: "/dashboard",
     element: <Dashboard />,
     icon: <ChartPieIcon className="w-6 h-6" />,
+
+    loader() {
+      const customerService = container.resolve(CustomerService);
+      const response = customerService.get();
+
+      return defer({
+        customers: response.data,
+      });
+    },
   },
   {
     path: "/settings",

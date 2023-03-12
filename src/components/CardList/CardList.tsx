@@ -17,7 +17,7 @@ interface Response {
 }
 
 const CardList: FC = () => {
-  const { data } = useLoaderData() as Response;
+  const { foods } = useLoaderData() as Response;
 
   const count = new Array(10).fill("");
   const CardListSkeleton: FC = () => {
@@ -45,16 +45,14 @@ const CardList: FC = () => {
     <div className="flex flex-wrap gap-x-7 gap-y-12 mt-9">
       <Suspense fallback={<CardListSkeleton />}>
         <Await
-          resolve={data}
+          resolve={foods}
           children={(relovedData: Data[]) => {
+            console.log(relovedData);
+
             return (
               <>
                 {relovedData.map((data) => (
-                  <Card
-                    key={data.id}
-                    bordered={false}
-                    className="food-item rounded-2xl bg-base-200 items-center"
-                  >
+                  <Card key={data.id} bordered={false} className="food-item">
                     <div className="-mt-9">
                       <Card.Image src={data.img} className="rounded-full" />
                     </div>

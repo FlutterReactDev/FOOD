@@ -1,17 +1,30 @@
-import { Button, Divider, Navbar, Stats } from "@components";
+import {
+  Badge,
+  Button,
+  Checkbox,
+  Divider,
+  Mask,
+  Navbar,
+  Stats,
+  Table,
+} from "@components";
 import Stat from "@components/Stats/Stat";
 import {
+  AdjustmentsHorizontalIcon,
   ArrowDownIcon,
   ArrowUpIcon,
   BookmarkIcon,
   CurrencyDollarIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
+import { Suspense } from "react";
+import { Await, useLoaderData } from "react-router-dom";
 
 const Dashboard = () => {
+  const { customers } = useLoaderData();
   return (
-    <div className="flex py-6">
-      <div className="w-2/3">
+    <div className="flex py-6 h-screen">
+      <div className="w-2/3 flex flex-col">
         <Navbar>
           <Navbar.Start>
             <div>
@@ -21,7 +34,7 @@ const Dashboard = () => {
           </Navbar.Start>
         </Navbar>
         <Divider />
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 mb-6">
           <Stats className="bg-base-200">
             <Stats.Stat>
               <Stat.Item className="flex items-center gap-3" variant="title">
@@ -94,6 +107,56 @@ const Dashboard = () => {
               </Stat.Item>
             </Stats.Stat>
           </Stats>
+        </div>
+
+        <div className="w-full p-6 bg-base-200 rounded-lg flex-grow overflow-y-auto h-full">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-semibold">Order Report</h1>
+            <Button className="btn-outline">
+              <AdjustmentsHorizontalIcon className="h-6 w-6" />
+              Filter Order
+            </Button>
+          </div>
+          <div className="overflow-x-auto">
+            <Table className="w-full">
+              <Table.Head>
+                <span>Customer</span>
+                <span>Menu</span>
+                <span>Total Payment</span>
+                <span>Status</span>
+              </Table.Head>
+
+              <Table.Body>
+                <Suspense fallback={<h1>Loading...</h1>}>
+                  <Await
+                    resolve={customers}
+                    children={(data) => {
+                      return data.map((customer) => {
+                        return (
+                          <Table.Row>
+                            <div className="flex items-center space-x-3 truncate">
+                              <Mask
+                                className="mask-circle w-12 h-12"
+                                src={customer.avatar}
+                              />
+                              <div>
+                                <div className="font-bold">{customer.name}</div>
+                              </div>
+                            </div>
+                            <div>{customer.menu}</div>
+                            <div>${customer.totalPayment}</div>
+                            <div>
+                              <Badge color="success">{customer.status}</Badge>
+                            </div>
+                          </Table.Row>
+                        );
+                      });
+                    }}
+                  />
+                </Suspense>
+              </Table.Body>
+            </Table>
+          </div>
         </div>
       </div>
       <div className="w-1/3"></div>

@@ -1,3 +1,4 @@
 .food-item {
   width: calc((100% / 3) - 28px);
+  @apply rounded-2xl bg-base-200 items-center;
 }

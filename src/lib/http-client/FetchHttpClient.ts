@@ -1,23 +1,31 @@
 import HttpClientInterface, {
+  HttpClientConfigInterface,
   HttpClientRequestInit,
   HttpRequestInterface,
-} from "./HttpCLientInterface";
+} from "./HttpClientInterface";
 import HTTP_METHODS from "./types";
 
 class FetchHttpClient implements HttpClientInterface {
+  constructor(public config?: HttpClientConfigInterface) {}
+  static createInstance(config?: HttpClientConfigInterface) {
+    return new FetchHttpClient(config);
+  }
+
   request<T extends unknown>(
     method: HTTP_METHODS,
     url: string,
     init?: HttpClientRequestInit | undefined
   ): HttpRequestInterface<T> {
     const abortController = new AbortController();
-    const _url = new URL(url);
-
+    const _url = new URL(
+      ((this.config?.baseUrl || "") + url).replaceAll("//", "/")
+    );
     if (init?.queryParams) {
       Object.entries(init.queryParams).forEach(([key, value]) => {
         _url.searchParams.append(key, value);
       });
     }
+    console.log(_url);
 
     const data = fetch(_url, {
       body: init?.body ? JSON.stringify(init?.body) : undefined,
@@ -37,7 +45,7 @@ class FetchHttpClient implements HttpClientInterface {
   }
 
   post<T extends unknown>(url: string, init?: HttpClientRequestInit) {
-    this.request<T>(HTTP_METHODS.POST, url, init);
+    return this.request<T>(HTTP_METHODS.POST, url, init);
   }
 
   put<T extends unknown>(url: string, init?: HttpClientRequestInit) {
@@ -45,7 +53,7 @@ class FetchHttpClient implements HttpClientInterface {
   }
 
   delete<T extends unknown>(url: string, init?: HttpClientRequestInit) {
-    this.request<T>(HTTP_METHODS.DELETE, url, init);
+    return this.request<T>(HTTP_METHODS.DELETE, url, init);
   }
 }
 

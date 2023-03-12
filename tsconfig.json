@@ -6,6 +6,7 @@
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -24,7 +25,11 @@
       "@router": ["router/index.ts"],
       "@router/*": ["router/*"],
       "@pages": ["pages/index.ts"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@lib/*": ["lib/*"],
+      "@di": ["di/tokens.ts"],
+      "@service": ["service/index.ts"],
+      "@service/*": ["service/*"]
     }
   },
   "include": ["src"],
