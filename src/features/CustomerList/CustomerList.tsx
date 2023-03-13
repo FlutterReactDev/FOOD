@@ -1,6 +1,6 @@
 import { Table } from "@components";
 import { CustomerService } from "@service";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { container } from "tsyringe";
 import CustomerListItem from "./CustomerListItem";
 import CustomerSkeleton from "./CustomerSkeleton";
@@ -16,7 +16,6 @@ export interface Customers {
 
 const CustomerList = () => {
   const [customers, setCustomers] = useState<Customers[] | undefined>();
-
   useEffect(() => {
     const customerService = container.resolve(CustomerService);
     customerService.get<Customers[]>().data?.then((data) => {
@@ -25,9 +24,9 @@ const CustomerList = () => {
   }, []);
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto" >
       <Table className="w-full">
-        <Table.Head>
+        <Table.Head >
           <span>Customer</span>
           <span>Menu</span>
           <span>Total Payment</span>

@@ -1,13 +1,4 @@
-import {
-  Badge,
-  Button,
-  Checkbox,
-  Divider,
-  Mask,
-  Navbar,
-  Stats,
-  Table,
-} from "@components";
+import { Button, Divider, Mask, Navbar, Stats } from "@components";
 import Stat from "@components/Stats/Stat";
 import { CustomerList } from "@features";
 import {
@@ -17,13 +8,46 @@ import {
   BookmarkIcon,
   CurrencyDollarIcon,
   UsersIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
-import { Suspense } from "react";
-import { Await, useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import ReactApexChart from "react-apexcharts";
+
+import Dish from "../../assets/DishImg1.png";
 
 const Dashboard = () => {
+  const [data, setData] = useState({
+    series: [44, 55, 67, 83],
+    options: {
+      chart: {
+        height: 350,
+        type: "radialBar",
+      },
+      plotOptions: {
+        radialBar: {
+          dataLabels: {
+            name: {
+              fontSize: "22px",
+            },
+            value: {
+              fontSize: "16px",
+            },
+            total: {
+              show: true,
+              label: "Total",
+              formatter: function(w) {
+                // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
+                return 249;
+              },
+            },
+          },
+        },
+      },
+      labels: ["Apples", "Oranges", "Bananas", "Berries"],
+    },
+  });
   return (
-    <div className="flex py-6 h-screen">
+    <div className="flex py-6 h-screen gap-6 pr-6">
       <div className="w-2/3 flex flex-col">
         <Navbar>
           <Navbar.Start>
@@ -120,7 +144,64 @@ const Dashboard = () => {
           <CustomerList />
         </div>
       </div>
-      <div className="w-1/3"></div>
+      <div className="w-1/3">
+        <div className="p-6 bg-base-200 rounded-lg">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-semibold">Order Report</h1>
+            <Button className="btn-outline">
+              <ChevronDownIcon className="h-6 w-6" />
+              Today
+            </Button>
+          </div>
+          <Divider />
+          <div className="w-full flex flex-col gap-6">
+            <div className="flex gap-3">
+              <Mask className="mask-circle w-14 h-14" src={Dish} />
+              <div>
+                <h1 className="font-semibold text-xl">
+                  Spicy seasoned seafood noodles
+                </h1>
+                <span>200 dishes ordered</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <Mask className="mask-circle w-14 h-14" src={Dish} />
+              <div>
+                <h1 className="font-semibold text-xl">
+                  Spicy seasoned seafood noodles
+                </h1>
+                <span>200 dishes ordered</span>
+              </div>
+            </div>
+            <div className="flex gap-3">
+              <Mask className="mask-circle w-14 h-14" src={Dish} />
+              <div>
+                <h1 className="font-semibold text-xl">
+                  Spicy seasoned seafood noodles
+                </h1>
+                <span>200 dishes ordered</span>
+              </div>
+            </div>
+          </div>
+          <Button fullWidth className="btn-outline mt-8">
+            View All
+          </Button>
+        </div>
+
+        <div className="p-6 bg-base-200 rounded-lg mt-6">
+          <div className="flex items-center justify-between">
+            <h1 className="text-xl font-semibold">Order Report</h1>
+            <Button className="btn-outline">
+              <ChevronDownIcon className="h-6 w-6" />
+              Today
+            </Button>
+          </div>
+          <Divider />
+          <div className="w-full flex flex-col gap-6">
+            <ReactApexChart options={data.options} series={data.series} type="radialBar" height={250}/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
